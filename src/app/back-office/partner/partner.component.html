@@ -1,0 +1,29 @@
+<h1>Partner</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Sector</th>
+            <th>Email</th>
+            <th>Activity</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+
+
+
+
+    <tbody>
+        <tr *ngFor="let partner of partners">
+            <td>{{ partner.partnerName }}</td>
+            <td>{{ partner.sectorPartner }}</td>
+            <td>{{ partner.emailPartner }}</td>
+            <td>{{ partner.activitePartner }}</td>
+            <td>
+                <button (click)="editPartner(partner)" class="btn btn-primary">Edit</button>
+                <button (click)="deletePartner(partner.partnerId)" class="btn btn-danger">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

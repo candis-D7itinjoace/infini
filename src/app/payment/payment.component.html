@@ -1,0 +1,39 @@
+//front
+<div>
+    <h1>Payments</h1>
+
+    <label>
+        Monthly Payment:
+        <input [(ngModel)]="mnttotl" type="number" placeholder="Enter monthly payment">
+    </label>
+
+    <label>
+        Period:
+        <input [(ngModel)]="period" type="number" placeholder="Enter period">
+    </label>
+
+    <label>
+        Interest Rate:
+        <input [(ngModel)]="interst" type="number" placeholder="Enter interest rate">
+    </label>
+   
+
+    <button (click)="exportToExcel(mnttotl, period, interst)">Export to Excel</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Payment Number</th>
+                <th>Amount</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let payment of payments">
+                <td>{{ payment.paymentNumber }}</td>
+                <td>{{ payment.principalPaid }}</td>
+                <!-- Add more cells as needed -->
+            </tr>
+        </tbody>
+    </table>
+</div>

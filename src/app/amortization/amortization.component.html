@@ -1,0 +1,43 @@
+//front
+<div>
+    <h1>Amortization</h1>
+
+    <form>
+        <label>
+            Initial Balance:
+            <input [(ngModel)]="amortization.initialBalance" name="initialBalance">
+        </label>
+
+        <label>
+            Duration in Months:
+            <input [(ngModel)]="amortization.durationInMonths" name="durationInMonths">
+        </label>
+
+        <label>
+            Payment Type:
+            <input [(ngModel)]="amortization.paymentType" name="paymentType">
+        </label>
+
+        <label>
+            Interest Rate:
+            <input [(ngModel)]="amortization.interestRate" name="interestRate">
+        </label>
+
+        <label>
+            Future Value:
+            <input [(ngModel)]="amortization.futureValue" name="futureValue">
+        </label>
+
+        <button (click)="retrieveAmortization()">Retrieve Amortization</button>
+        <button (click)="calculateInterest()">Calculate Interest</button>
+    </form>
+
+    <div *ngIf="amortization.paymentList">
+        <h2>Payment List</h2>
+        <ul>
+            <li *ngFor="let payment of amortization.paymentList">
+                {{ payment }}
+            </li>
+        </ul>
+    </div>
+</div>

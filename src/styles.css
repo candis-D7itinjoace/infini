@@ -1,0 +1,8 @@
+/* You can add global styles to this file,/and also import other style files */
+@import "assets/assets/vendor\ copy/bootstrap/css/bootstrap.min.css";
+@import "assets/assets/css/style.css";
+@import "assets/assets/css/stylefront.css";
+@import "assets/assets/css/styleback.css";
+@import "/src/styles.css";
+@import "assets/assets/css/pages/pages.css";
+

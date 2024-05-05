@@ -1,0 +1,38 @@
+<div class="d-flex flex-column">
+    <h1>Payments</h1>
+
+    <label class="form-group">
+        Monthly Payment:
+        <input class="form-control" [(ngModel)]="mnttotl" type="number" placeholder="Enter monthly payment">
+    </label>
+
+    <label class="form-group">
+        Period:
+        <input class="form-control" [(ngModel)]="period" type="number" placeholder="Enter period">
+    </label>
+
+    <label class="formg-group">
+        Interest Rate:
+        <input class="form-control" [(ngModel)]="interst" type="number" placeholder="Enter interest rate">
+    </label>
+
+
+    <button class="btn btn-success" (click)="exportToExcel(mnttotl, period, interst)">Export to Excel</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Payment Number</th>
+                <th>Amount</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let payment of payments">
+                <td>{{ payment.paymentNumber }}</td>
+                <td>{{ payment.principalPaid }}</td>
+                <!-- Add more cells as needed -->
+            </tr>
+        </tbody>
+    </table>
+</div>
